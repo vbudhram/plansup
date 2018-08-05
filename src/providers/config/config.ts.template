@@ -1,0 +1,12 @@
+export class AppConfig {
+  static get FIREBASE() {
+    const firebase = {
+      "apiKey": "ENV.firebase.apiKey",
+      "authDomain": "ENV.firebase.authDomain",
+      "databaseURL": "ENV.firebase.databaseURL",
+      "storageBucket": "ENV.firebase.storageBucket",
+      "messagingSenderId": "ENV.firebase.messagingSenderId"
+    };
+    return firebase;
+  }
+}

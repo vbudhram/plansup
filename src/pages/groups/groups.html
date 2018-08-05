@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title color="primary">My Groups</ion-title>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="presentAddGroupModal()">
+        <!--<ion-icon name="add"></ion-icon>-->
+        New
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let group of groups">
+    <ion-card-content (click)="selectGroup(group)">
+      <ion-card-title>
+        {{group.name}}
+      </ion-card-title>
+      <p>Description: {{group.description}}</p>
+      <p>Invite Code: {{group.inviteCode}}</p>
+      <p>Created By: {{group.createdBy}}</p>
+    </ion-card-content>
+    <ion-row class="row">
+      <ion-col class="col"></ion-col>
+      <ion-col class="col"></ion-col>
+      <ion-col class="col" text-right>
+        <button ion-button clear icon-only (click)="presentGroupMenu($event, group)">
+          <ion-icon name="ios-more"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

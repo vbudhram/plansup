@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title color="primary">Add Group</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">Cancel
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Name</ion-label>
+      <ion-input type="text" [(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Description</ion-label>
+      <ion-input type="text" [(ngModel)]="description"></ion-input>
+    </ion-item>    
+  </ion-list>
+  <div padding>
+    <button ion-button full (click)="updateOrCreate()">{{isEdit ?  'Update' : 'Create'}}</button>    
+  </div>  
+</ion-content>

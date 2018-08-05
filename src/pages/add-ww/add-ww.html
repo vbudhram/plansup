@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title color="primary">When/Where details</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">Cancel
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>When</ion-label>
+      <ion-datetime displayFormat="MMM D h:mm A" pickerFormat="MMM D h:mm A" [(ngModel)]="when"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Where</ion-label>
+      <ion-input type="text" [(ngModel)]="where"></ion-input>
+    </ion-item>
+  </ion-list>
+  <div padding>
+    <button ion-button full (click)="addWW()">Propose</button>
+  </div>
+</ion-content>

@@ -1,0 +1,13 @@
+{
+  "rules": {
+    "indent": [true, "spaces"],
+    "no-duplicate-variable": true,
+    "no-unused-variable": [
+      true
+    ],
+  "only-arrow-functions": [true, "allow-declarations", "allow-named-functions"],    "semicolon": [true, "always", "ignore-bound-class-methods"]
+  },
+  "rulesDirectory": [
+    "node_modules/tslint-eslint-rules/dist/rules"
+  ]
+}

@@ -1,0 +1,35 @@
+page-event {
+    .ww-vote {
+        display: table;
+        color: #ccc;
+        height: 45px;
+
+        .title {
+            padding-right: 5px;
+            min-width: 100px;
+
+            .yes {
+                color: green
+            }
+        }
+    }
+
+    img {
+        vertical-align: middle;
+        display: table-cell;
+    }
+
+    span {
+        vertical-align: middle;
+        display: table-cell;
+    }
+
+    .avatar-logo {
+        padding: 0px;
+        margin: 5px 0px 0px 0px;
+        display: inline;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;        
+    }
+}

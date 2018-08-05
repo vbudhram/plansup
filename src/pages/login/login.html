@@ -1,0 +1,45 @@
+<ion-content padding>
+  <div class="plansup-container">
+    <h1 class="plansup-text" color="primary">
+      plansup
+    </h1>
+  </div>
+  <div class="button-container">
+    <ion-item-group>
+      <ion-input #emailInput type="email" placeholder="Email" class="email-input"></ion-input>
+      <ion-input #emailPassword type="password" placeholder="Password" class="email-input"></ion-input>
+      <ion-row class="show-password-container">
+        <ion-checkbox (click)="showPassword(emailPassword)"></ion-checkbox>
+        <div padding-left="2px">show password</div>
+      </ion-row>
+      <ion-row>
+        <button ion-button block class="email-button" (click)="signIn(emailInput.value, emailPassword.value)">Sign in</button>
+        <div padding-left="0px"></div>
+        <button ion-button block class="email-button" (click)="onEmailButton(emailInput.value, emailPassword.value)">Sign up</button>
+      </ion-row>
+    </ion-item-group>
+    <ion-row class="blank-row">
+      <ion-col width-100>
+        <div class="or-column">- or -</div>
+      </ion-col>
+    </ion-row>
+    <ion-item-group>
+      <button ion-button block class="facebook-button" (click)="onFacebookButton()">
+        <ion-row>
+          <ion-col width-25 class="fa fa-facebook fa-lg icon-spacing"></ion-col>
+          <ion-col width-75 class="button-text-spacing">
+            Continue with Facebook
+          </ion-col>
+        </ion-row>
+      </button>
+      <button ion-button block class="google-button" (click)="onGoogleButton()">
+        <ion-row>
+          <ion-col width-25 class="fa fa-google fa-lg icon-spacing"></ion-col>
+          <ion-col width-75 class="button-text-spacing">
+            Continue with Google
+          </ion-col>
+        </ion-row>
+      </button>
+    </ion-item-group>
+  </div>
+</ion-content>

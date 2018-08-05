@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{event.name}}
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="presentAddWWModal()">
+        Propose
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <p>Some ideas being thrown out for this event.</p>
+  <ion-card *ngFor="let whenwhere of whenwheres">
+    <ion-card-content>
+      <ion-row>
+        <h2><a>Vijay Budhram</a> proposed at <a>{{whenwhere.where}}</a> for {{whenwhere.when | date:'medium'}}</h2>
+      </ion-row>
+      <ion-item-divider>
+        Can you make it?
+      </ion-item-divider>
+      <ion-item>
+        <ion-row>
+          <ion-col>
+            <button ion-button full (click)="voteForWhenWhere(whenwhere, 'yes')">Yes ({{whenwhere.yes.length}})</button>
+          </ion-col>
+          <ion-col>
+            <button ion-button full (click)="voteForWhenWhere(whenwhere, 'maybe')">Maybe ({{whenwhere.maybe.length}})</button>
+          </ion-col>
+          <ion-col>
+            <button ion-button full (click)="voteForWhenWhere(whenwhere, 'no')">No ({{whenwhere.no.length}}) </button>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+      <ion-item [hidden]="whenwhere.showDetails">
+        <a (click)="toggleDetails(whenwhere)">Show Details</a>
+      </ion-item>
+
+      <ion-item [hidden]="!whenwhere.showDetails">
+        <div class="ww-vote">
+          <span class="title yes">Yes ({{whenwhere.yes.length}})</span>
+          <span *ngFor="let vote of whenwhere.yes"><img class="avatar-logo" src="../assets/placeholders/avatar1.png" /></span>
+        </div>
+        <div class="ww-vote">
+          <span class="title maybe">Maybe ({{whenwhere.maybe.length}})</span>
+          <span *ngFor="let vote of whenwhere.maybe"><img class="avatar-logo" src="../assets/placeholders/avatar1.png" /></span>
+        </div>
+        <div class="ww-vote">
+          <span class="title no">No ({{whenwhere.no.length}})</span>
+          <span *ngFor="let vote of whenwhere.no"><img class="avatar-logo" src="../assets/placeholders/avatar1.png" /></span>
+        </div>
+        <a (click)="toggleDetails(whenwhere)">Hide Details</a>
+      </ion-item>
+
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

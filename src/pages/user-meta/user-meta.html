@@ -1,0 +1,16 @@
+<ion-content padding>
+
+  <ion-item>
+    <ion-label color="primary" fixed>First Name*</ion-label>
+    <ion-input #firstName type="text" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" fixed>Last Name*</ion-label>
+    <ion-input #lastName type="text" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" fixed>Phone</ion-label>
+    <ion-input #phoneNumber type="tel" ></ion-input>
+  </ion-item>
+  <button ion-button (click)="submitUserMetaData(firstName.value, lastName.value, phoneNumber.value)">Submit</button> {{notValid}}
+</ion-content>

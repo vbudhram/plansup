@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Profile
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="logout()">
+        Log Out
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<ion-content padding="true" class="profile-page">
+<ion-card>
+  <ion-list>
+  <ion-item>
+   <ion-thumbnail item-start item-left>
+        <img src="https://scontent.ftpa1-1.fna.fbcdn.net/v/t1.0-9/18195010_10110857672583921_2195247731815522010_n.jpg?oh=b9e6e8bed6a1fdbca307e8a8fa544e65&oe=5A50A0E6">
+   </ion-thumbnail>
+<ion-card-content>
+    <ion-card-title>
+      <h1>{{userMeta.firstName + ' ' + userMeta.lastName}} </h1>
+      </ion-card-title>
+      <p>{{userMeta.phoneNumber}}</p>
+      <p>Elite Planner</p>
+       <button ion-button icon-only (click)="presentEditNameModal()" round outline>Edit Name</button>
+  </ion-card-content>
+  </ion-item></ion-list>
+</ion-card>
+
+<div padding>
+  <ion-segment [(ngModel)]="profile">
+    <ion-segment-button value="recent">
+      Recent Activity
+    </ion-segment-button>
+    <ion-segment-button value="statistics">
+      Statistics
+    </ion-segment-button>
+  </ion-segment>
+</div>
+
+<div [ngSwitch]="profile">
+  <ion-list *ngSwitchCase="'recent'">
+
+    <!--Mock recent activity variable-->
+    <ion-item *ngFor="let recent of recentActivity">
+      <ion-avatar item-start item-left>
+        <img src="http://s4solutions.org/wp-content/uploads/2016/08/events-management-3.jpg">
+      </ion-avatar>
+      <h2>{{recent.name}}</h2>
+      <p>{{recent.description}}</p>
+        <p>{{recent.date}}</p>
+    </ion-item></ion-list>
+
+  <!--Mock statistics variable-->
+  <ion-list *ngSwitchCase="'statistics'">
+    <ion-item>
+    <h2>Number of Groups: {{statistics[0]}}</h2>
+        <ion-thumbnail item-start item-left>
+        <img src="https://css-tricks.com/wp-content/uploads/2013/08/reset-progress-bar.png">
+        </ion-thumbnail>
+    </ion-item>
+    <ion-item>
+    <h2>Number of Events: {{statistics[1]}}</h2>
+        <ion-thumbnail item-start item-left>
+        <img src="https://css-tricks.com/wp-content/uploads/2013/08/reset-progress-bar.png">
+        </ion-thumbnail>
+    </ion-item>
+     <ion-item>
+    <h2>Number of Plans Created: {{statistics[2]}}</h2>
+        <ion-thumbnail item-start item-left>
+        <img src="https://css-tricks.com/wp-content/uploads/2013/08/reset-progress-bar.png">
+        </ion-thumbnail>
+    </ion-item>
+  </ion-list></div>
